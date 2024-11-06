@@ -30,8 +30,8 @@ const SOAPBindingV1 = "urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
 type EntitiesDescriptor struct {
 	XMLName             xml.Name       `xml:"urn:oasis:names:tc:SAML:2.0:metadata EntitiesDescriptor"`
 	ID                  *string        `xml:",attr,omitempty"`
-	ValidUntil          *time.Time     `xml:"validUntil,attr,omitempty"`
-	CacheDuration       *time.Duration `xml:"cacheDuration,attr,omitempty"`
+	ValidUntil          time.Time      `xml:"validUntil,attr,omitempty"`
+	CacheDuration       time.Duration  `xml:"cacheDuration,attr,omitempty"`
 	Name                *string        `xml:",attr,omitempty"`
 	Signature           *etree.Element
 	EntitiesDescriptors []EntitiesDescriptor `xml:"urn:oasis:names:tc:SAML:2.0:metadata EntitiesDescriptor"`
